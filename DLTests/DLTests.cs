@@ -6,23 +6,21 @@ using NUnit.Framework;
 namespace PruebaCoypu
 {
     [TestFixture]
-    public class TuleapTests
+    public class DLTests
     {
         [Test]
-        public void LoginTest()
+        public void QueEsTest()
         {
             var sessionConfig = new SessionConfiguration() {
                 Browser = Browser.Chrome,
-                AppHost = "dltuleap.dl.cl",
+                AppHost = "www.dl.cl",
                 Timeout = TimeSpan.FromSeconds(50)
             };
             var browser = new BrowserSession(sessionConfig);
             try
             {
                 browser.Visit("");
-                browser.FindField("Username").FillInWith("gsierro");
-                browser.FindField("Password").FillInWith("Gasr3673");
-                browser.ClickButton("Login");
+                browser.ClickLink("que-es-dl");
             }
             finally
             {
